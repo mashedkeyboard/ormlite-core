@@ -573,6 +573,14 @@ public class QueryBuilder<T, ID> extends StatementBuilder<T, ID> {
 	protected String getTableName() {
 		return (alias == null ? tableName : alias);
 	}
+	
+	/*
+	 * Gets the list of JOINs currently applied to this QueryBuilder.
+	 * @return a List of {@link JoinInfo}s
+	 */
+	public List<JoinInfo> getJoinList() {
+		return joinList;
+	}
 
 	private void addOrderBy(OrderBy orderBy) {
 		if (orderByList == null) {
